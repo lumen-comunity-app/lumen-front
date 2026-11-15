@@ -100,7 +100,7 @@ export default function Home() {
         <section className="community-strip">
           <div className="strip-emblem"><Image src="/images/lumen-emblem.png" alt="" width={116} height={116} /></div>
           <div><span className="eyebrow">UMA COMUNIDADE COM ESPAÇO PARA TODO MUNDO</span><h2>Chegue como você é.</h2><p>Converse com respeito, cuide dos seus limites e ajude a fazer do Lumen um lugar acolhedor.</p></div>
-          <Link href="/privacidade" className="text-link">Conheça nosso compromisso <span>↗</span></Link>
+          <Link href="/privacy" className="text-link">Conheça nosso compromisso <span>↗</span></Link>
         </section>
 
         <section className="download-section" id="download">

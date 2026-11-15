@@ -23,8 +23,8 @@ export function SiteFooter() {
         <span>Um lugar para ser você.</span>
       </Link>
       <div className="footer-links">
-        <Link href="/privacidade">Privacidade</Link>
-        <Link href="/termos">Termos de serviço</Link>
+        <Link href="/privacy">Privacidade</Link>
+        <Link href="/terms">Termos de serviço</Link>
       </div>
       <p className="copyright">© 2026 Lumen. Feito para conectar.</p>
     </footer>
