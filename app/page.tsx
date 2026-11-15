@@ -57,7 +57,7 @@ export default function Home() {
       <main>
         <section className="hero" id="universo">
           <div className="hero-copy">
-            <span className="eyebrow"><span className="eyebrow-star">✦</span> UM UNIVERSO DE CONVERSAS</span>
+            <span className="eyebrow"><span className="eyebrow-star">✦</span> LUMEN — DESABAFOS E AMIZADES</span>
             <h1>Um lugar para<br />ser <span className="ser-voce">você.</span></h1>
             <p className="hero-description">O Lumen é uma comunidade para conversar, compartilhar o que sente e encontrar pessoas que entendem você — com espaço para se expressar do seu jeito.</p>
             <PlayButton className="hero-download" />
