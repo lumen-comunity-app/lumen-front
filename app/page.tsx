@@ -1,69 +1,117 @@
 import Image from "next/image";
+import Link from "next/link";
+import { SiteFooter, SiteHeader } from "./ui";
+
+const GOOGLE_PLAY_URL = "";
+
+const features = [
+  {
+    number: "01",
+    symbol: "◌",
+    title: "Fale com liberdade",
+    copy: "Compartilhe ideias e desabafos em uma comunidade onde você pode se expressar com mais leveza.",
+    tint: "blue",
+  },
+  {
+    number: "02",
+    symbol: "↗",
+    title: "Conexões de verdade",
+    copy: "Conheça pessoas, acompanhe conversas e crie amizades no seu próprio ritmo.",
+    tint: "gold",
+  },
+  {
+    number: "03",
+    symbol: "✧",
+    title: "Histórias que aproximam",
+    copy: "Leia histórias da comunidade ou comece a escrever as suas, capítulo por capítulo.",
+    tint: "lavender",
+  },
+];
+
+function PlayButton({ className = "" }: { className?: string }) {
+  const buttonContent = (
+    <>
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3.6 2.7c-.36.38-.6.98-.6 1.77v15.06c0 .8.24 1.4.61 1.78l.1.09 8.44-9.3v-.22L3.7 2.62l-.1.08Zm9.85 10.48-2.62 2.9-6.1 6.72c.5.25 1.13.21 1.82-.18l10.9-6.2-4-3.24Zm5.38-4.8-3.65-2.08-4.35-2.47-6.1-3.46C4.04.03 3.38.02 2.86.3l8.4 9.25 2.66 2.92 4.91-3.98Zm2.02 2.1c0-.83-.28-1.4-.81-1.7l-3.16-1.8-4.2 3.42v.22l4.27 3.47 3.09-1.75c.53-.3.81-.88.81-1.71v-.15Z" />
+      </svg>
+      <span><small>EM BREVE NA</small><strong>Google Play</strong></span>
+      <span className="play-arrow" aria-hidden="true">↗</span>
+    </>
+  );
+  return (
+    <div className={`download-action ${className}`}>
+      {GOOGLE_PLAY_URL ? (
+        <a className="play-button" href={GOOGLE_PLAY_URL} target="_blank" rel="noreferrer">{buttonContent}</a>
+      ) : (
+        <button disabled className="play-button" type="button">{buttonContent}</button>
+      )}
+      {!GOOGLE_PLAY_URL && <span className="availability">O link de download será adicionado em breve.</span>}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <SiteHeader />
+      <main>
+        <section className="hero" id="universo">
+          <div className="hero-copy">
+            <span className="eyebrow"><span className="eyebrow-star">✦</span> UM UNIVERSO DE CONVERSAS</span>
+            <h1>Um lugar para<br />ser <span className="ser-voce">você.</span></h1>
+            <p className="hero-description">O Lumen é uma comunidade para conversar, compartilhar o que sente e encontrar pessoas que entendem você — com espaço para se expressar do seu jeito.</p>
+            <PlayButton className="hero-download" />
+            <div className="hero-footnote"><span className="online-dot" /> Um espaço feito para boas conexões</div>
+          </div>
+          <div className="hero-art" aria-label="Prévia da comunidade Lumen no celular">
+            <div className="orbit orbit-one" />
+            <div className="orbit orbit-two" />
+            <div className="spark spark-two">✧</div>
+            <div className="moon-glow" />
+            <Image className="app-preview" src="/images/lumen-community.png" alt="Prévia do aplicativo Lumen em um celular, exibindo a comunidade e publicações" width={394} height={858} priority unoptimized />
+          </div>
+          <a className="scroll-cue" href="#manifesto"><span /> ROLE PARA DESCOBRIR</a>
+        </section>
+
+        <section className="manifesto" id="manifesto">
+          <div className="manifesto-mark">✦</div>
+          <p className="eyebrow">MAIS PERTO, MESMO À DISTÂNCIA</p>
+          <h2>Às vezes, tudo começa<br />com um <span>“oi”.</span></h2>
+          <p className="manifesto-copy">Tem coisa que fica mais fácil quando a gente encontra um espaço para falar. No Lumen, cada conversa abre uma possibilidade: dividir o dia, ouvir uma nova perspectiva ou encontrar uma amizade inesperada.</p>
+        </section>
+
+        <section className="features-section" id="recursos">
+          <div className="section-heading">
+            <div><span className="eyebrow">O SEU PRÓXIMO CAPÍTULO</span><h2>Um universo inteiro<br />para descobrir.</h2></div>
+            <p>Encontre novas formas de se expressar e de se aproximar de quem está por aí.</p>
+          </div>
+          <div className="feature-grid">
+            {features.map((feature) => (
+              <article className={`feature-card ${feature.tint}`} key={feature.number}>
+                <div className="feature-top"><span>{feature.number} / LUMEN</span><span className="feature-symbol">{feature.symbol}</span></div>
+                <h3>{feature.title}</h3>
+                <p>{feature.copy}</p>
+                <span className="feature-line" />
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="community-strip">
+          <div className="strip-emblem"><Image src="/images/lumen-emblem.png" alt="" width={116} height={116} /></div>
+          <div><span className="eyebrow">UMA COMUNIDADE COM ESPAÇO PARA TODO MUNDO</span><h2>Chegue como você é.</h2><p>Converse com respeito, cuide dos seus limites e ajude a fazer do Lumen um lugar acolhedor.</p></div>
+          <Link href="/privacidade" className="text-link">Conheça nosso compromisso <span>↗</span></Link>
+        </section>
+
+        <section className="download-section" id="download">
+          <div className="download-stars" aria-hidden="true">✦　·　✧　　·　✦</div>
+          <span className="eyebrow">SUA PRÓXIMA CONVERSA ESTÁ A UM TOQUE</span>
+          <h2>Vamos acender<br />essa conexão?</h2>
+          <p>Baixe o aplicativo Lumen e faça parte da comunidade.</p>
+          <PlayButton className="download-centered" />
+        </section>
       </main>
-    </div>
+      <SiteFooter />
+    </>
   );
 }
