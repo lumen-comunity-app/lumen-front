@@ -24,6 +24,7 @@ export function SiteFooter() {
       </Link>
       <div className="footer-links">
         <Link href="/privacy">Privacidade</Link>
+        <Link href="/delete">Excluir conta</Link>
         <Link href="/terms">Termos de serviço</Link>
       </div>
       <p className="copyright">© 2026 Lumen. Feito para conectar.</p>
